@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "executiontimelogger", "src\executiontimelogger.csproj", "{73DC7933-584A-4065-815C-0AEF5DD1ADE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "executiontimelogger", "src\ExecutionTimeLogger.csproj", "{73DC7933-584A-4065-815C-0AEF5DD1ADE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\test.csproj", "{92C92721-56C0-4169-BD97-9C884C470C36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\Test.csproj", "{92C92721-56C0-4169-BD97-9C884C470C36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
