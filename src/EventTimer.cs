@@ -1,37 +1,35 @@
 using System;
 using ExecutionTimeLogger.Models;
+using System.Diagnostics;
 
 namespace ExecutionTimeLogger
 {
     public class EventTimer : IEventTimer
     {
         private IEventLogger _logger;
+        private TrackEvent _trackedEvent;
+        
         public EventTimer(IEventLogger logger)
         {
             _logger = logger;
         }
+
         public void Start(string eventName, string phase)
         {
-            var trackedEvent = new TrackEvent
+            _trackedEvent = new TrackEvent
             {
                 EventName = eventName,
                 Phase = phase,
-                EventTime = DateTime.Now
+                EventStopWatch = new Stopwatch()
             };
-
-            _logger.Log(trackedEvent);
+            _logger.Log(_trackedEvent);
+            _trackedEvent.EventStopWatch.Start();
         }
 
-        public void Stop(string eventName, string phase)
+        public void Stop()
         {
-            var trackedEvent = new TrackEvent
-            {
-                EventName = eventName,
-                Phase = phase,
-                EventTime = DateTime.Now
-            };
-
-            _logger.Log(trackedEvent);
+            _trackedEvent.EventStopWatch.Stop();
+            _logger.Log(_trackedEvent);
         }
     }
 }

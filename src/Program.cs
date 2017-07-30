@@ -13,7 +13,7 @@ namespace ExecutionTimeLogger
 
             var eventTimer = new EventTimer(new FileLogger());
             eventTimer.Start("a", "b");
-            eventTimer.Stop("a", "b");
+            eventTimer.Stop();
         }
     }
 }
